@@ -1,53 +1,59 @@
-name: Bug Report
-description: 提交错误报告
-title: "[Bug]: "
-labels: ["bug", "triage"]
-assignees:
-  - Ohto-Ai
+name: 🐞 Bug
+description: 提交BUG/ISSUE
+title: "[BUG] <title>"
+labels: [Bug, Needs Triage]
 body:
-  - type: markdown
-    attributes:
-      value: |
-        感谢您花时间填写此错误报告！
-  - type: input
-    id: contact
-    attributes:
-      label: 联系方式
-      description: 如果需要更多信息，我们如何与您取得联系？
-      placeholder: 例如 email@example.com
-    validations:
-      required: false
-  - type: textarea
-    id: what-happened
-    attributes:
-      label: 问题描述
-      description: 也请告诉我，你期望发生什么
-      placeholder: 请告诉我发生了什么
-      value: "出现了一个bug"
-    validations:
+- type: checkboxes
+  attributes:
+    label: 关于此问题的Issue是否已经存在？
+    description: 请搜索您遇到的错误来检查是否已经存在相关Issue。
+    options:
+    - label: 我已经搜索了现有的Issue
       required: true
-  - type: dropdown
-    id: version
-    attributes:
-      label: 版本
-      description: 您正在运行我们的软件的哪个版本？
-      options:
-        - v0.0.1
-    validations:
-      required: true
-  - type: dropdown
-    id: browsers
-    attributes:
-      label: 您在哪些浏览器上发现此问题？
-      multiple: true
-      options:
-        - Firefox
-        - Chrome
-        - Safari
-        - Microsoft Edge
-  - type: textarea
-    id: logs
-    attributes:
-      label: 相关日志输出
-      description: 请复制并粘贴任何相关的日志输出。 这将自动格式化为代码，因此不需要反引号。
-      render: shell
+- type: textarea
+  attributes:
+    label: 当前行为
+    description: 简明扼要地描述您遇到的问题。
+  validations:
+    required: false
+- type: textarea
+  attributes:
+    label: 预期行为
+    description: 对您期望发生的事情的简明描述。
+  validations:
+    required: false
+- type: textarea
+  attributes:
+    label: 重现步骤
+    description: 重现行为的步骤。
+    placeholder: |
+      1. 关于环境...
+      2. 使用配置...
+      3. 运行 '...'
+      4. 查看错误...
+  validations:
+    required: false
+- type: textarea
+  attributes:
+    label: 环境
+    description: |
+      examples:
+        - **OS**: Ubuntu 20.04
+        - **g++**: 4.8
+        - **Browser**: Chrome 107.0.5304.87
+    value: |
+        - OS:
+        - g++:
+        - Browser:
+    render: markdown
+  validations:
+    required: false
+- type: textarea
+  attributes:
+    label: 其他
+    description: |
+      链接？ 参考？ 任何可以为我们提供有关您遇到的问题的更多背景信息的内容！
+
+      提示：您可以通过单击此区域将其突出显示然后将文件拖入来附加图像或日志文件。
+  validations:
+    required: false
