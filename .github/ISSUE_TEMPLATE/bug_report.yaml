@@ -1,0 +1,59 @@
+name: 🐞 Bug
+description: 提交BUG/ISSUE
+title: "[BUG] <title>"
+labels: [Bug, Needs Triage]
+body:
+- type: checkboxes
+  attributes:
+    label: 关于此问题的Issue是否已经存在？
+    description: 请搜索您遇到的错误来检查是否已经存在相关Issue。
+    options:
+    - label: 我已经搜索了现有的Issue
+      required: true
+- type: textarea
+  attributes:
+    label: 当前行为
+    description: 简明扼要地描述您遇到的问题。
+  validations:
+    required: false
+- type: textarea
+  attributes:
+    label: 预期行为
+    description: 对您期望发生的事情的简明描述。
+  validations:
+    required: false
+- type: textarea
+  attributes:
+    label: 重现步骤
+    description: 重现行为的步骤。
+    placeholder: |
+      1. 关于环境...
+      2. 使用配置...
+      3. 运行 '...'
+      4. 查看错误...
+  validations:
+    required: false
+- type: textarea
+  attributes:
+    label: 环境
+    description: |
+      examples:
+        - **OS**: Ubuntu 20.04
+        - **g++**: 4.8
+        - **Browser**: Chrome 107.0.5304.87
+    value: |
+        - OS:
+        - g++:
+        - Browser:
+    render: markdown
+  validations:
+    required: false
+- type: textarea
+  attributes:
+    label: 其他
+    description: |
+      链接？ 参考？ 任何可以为我们提供有关您遇到的问题的更多背景信息的内容！
+
+      提示：您可以通过单击此区域将其突出显示然后将文件拖入来附加图像或日志文件。
+  validations:
+    required: false
